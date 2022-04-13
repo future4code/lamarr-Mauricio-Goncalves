@@ -43,12 +43,13 @@ console.log(nome, idade)*/
 
 
 
-let = lasanha
-let = pimenta
-let = churrasco
+let  lasanha
+let  pimenta
+let  churrasco
 
-lasanha - prompt("voce gosta de lasanha? - Sim ou Nao")
-pimenta - prompt("voce gosta de pimenta? - Sim ou Nao")
-churrasco - prompt("voce gosta de churrasco? - Sim ou Nao")
+lasanha = prompt("voce gosta de lasanha? - Sim ou Nao")
+pimenta = prompt("voce gosta de pimenta? - Sim ou Nao")
+churrasco = prompt("voce gosta de churrasco? - Sim ou Nao")
+console.log(lasanha, pimenta, churrasco)
 
-console.log(lasanha,pimenta,churrasco)
+
