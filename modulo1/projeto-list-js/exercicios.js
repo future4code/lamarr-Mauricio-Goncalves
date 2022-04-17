@@ -38,8 +38,8 @@ function imprimeIdade() {
 // EXERCÍCIO 03
 function calculaIMC(peso, altura) {
   // implemente sua lógica aqui
-  
-  
+
+  console.log(IMC = Peso / Altura * Altura)
 }
 
 // EXERCÍCIO 04
@@ -68,8 +68,7 @@ console.log(`${cor3}`)
 // EXERCÍCIO 06
 function retornaStringEmMaiuscula(string) {
   // implemente sua lógica aqui
-  let texto = prompt("digite uma frase")
-  console.log(texto .toUpperCase)
+  
   
 
 
@@ -78,10 +77,6 @@ function retornaStringEmMaiuscula(string) {
 // EXERCÍCIO 07
 function calculaIngressosEspetaculo(custo, valorIngresso) {
   // implemente sua lógica aqui
-let valorIngresso = Number(prompt("Digite o valor do ingresso"))
-let custo = Number(prompt("Digite o custo do show"))
-let valor = custo / valorIngresso
-console.log(valor)
 
 
 }
