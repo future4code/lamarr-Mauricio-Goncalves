@@ -52,28 +52,31 @@ function imprimeInformacoesUsuario() {
 // EXERCÍCIO 05
 function imprimeTresCoresFavoritas() {
   // implemente sua lógica aqui
-  const cor1 = prompt('Digite uma cor')
-  const cor2 = prompt('Digite outra cor')
-  const cor3 = prompt('Digite mais uma cor')
-  
+ let cor1 = prompt("digite uma cor favorita")
+ let cor2 = prompt("digite outra cor favorita")
+ let cor3 = prompt("digite mais uma cor favorita")
+ console.log(cor1, cor2, cor3)
 }
 
 // EXERCÍCIO 06
 function retornaStringEmMaiuscula(string) {
   // implemente sua lógica aqui
-  const frase = "oi"
-  console.log(frase.toUpperCase())
+  let string1 = string.toUpperCase()
+return string1
 }
 
 // EXERCÍCIO 07
 function calculaIngressosEspetaculo(custo, valorIngresso) {
   // implemente sua lógica aqui
-  
+  let divisao = custo / valorIngresso
+  return divisao
 }
 
 // EXERCÍCIO 08
 function checaStringsMesmoTamanho(string1, string2) {
   // implemente sua lógica aqui
+let i =(string1 >= string2)
+return i
 
 }
 
@@ -81,24 +84,34 @@ function checaStringsMesmoTamanho(string1, string2) {
 function retornaPrimeiroElemento(array) {
   // implemente sua lógica aqui
 
+return array[0]
 }
 
 // EXERCÍCIO 10
 function retornaUltimoElemento(array) {
   // implemente sua lógica aqui
+return array.pop()
 
 }
 
 // EXERCÍCIO 11
 function trocaPrimeiroEUltimo(array) {
   // implemente sua lógica aqui
+  let primeiroElemento = array[0]
+  let ultimoElemento = array[array.length-1]
+  array[0] = array[array.length-1]
+  array[array.length-1] = primeiroElemento
+  return array
 
 }
 
 // EXERCÍCIO 12
 function checaIgualdadeDesconsiderandoCase(string1, string2) {
   // implemente sua lógica aqui
-
+let case1= string1.toLowerCase()
+let case2= string2.toLowerCase()
+let igualdade = case1 == case2
+return igualdade
 }
 
 // EXERCÍCIO 13
