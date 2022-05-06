@@ -10,7 +10,7 @@
  * 
  * 
  */
-    
+   console.log("Projeto Blackjack") 
 console.log("Bem vindo(a) ao jogo de Blackjack!")
    if (confirm("Você quer iniciar uma nova rodada?")){
 
@@ -35,7 +35,7 @@ console.log("Bem vindo(a) ao jogo de Blackjack!")
       }
 
      else{
-        console.log("O jogo Acabou")
+        console.log("O jogo Acabou") 
    }
 
    
