@@ -141,37 +141,31 @@ const produtos = [
 // //     })
 // //     console.log(novaArray)
 
-// //d) Crie um novo array que contenha apenas os objetos cujo nome contenha a palavra "Ypê" 
-const novaArray = produtos.filter((item)=>{
+//d) Crie um novo array que contenha apenas os objetos cujo nome contenha a palavra "Ypê" 
+// const novaArray = produtos.filter((item)=>{
 
-if(item.nome.includes("Ypê")){
-  return item.nome
-}
-})
-
-
-console.log(novaArray)
-
-
-
-// const arrayNovoD = produtos.filter((item)=>{
-//   if (item.nome.includes('Ypê')){
-//       return item.nome
-//   }
+// if(item.nome.includes("Ypê")){
+//   return item.nome
+// }
 // })
-// console.log(arrayNovoD)
 
-
-//const exibeInformacoes = empresas.map( empresa => `${empresa.nome}` + ' CEO: ' + `${empresa.CEO}`);
-
-
-// const novaArray = produtos.map((item) => {
-// return item.includes() 
-
-// })
 // console.log(novaArray)
 
 
+//e) Crie um novo array onde cada item é uma frase "Compre [NOME] por [PREÇO]". Esse array deve conter frases apenas dos itens cujo nome contenha a palavra "Ypê"
+const novaArray = produtos.filter((item)=>{
+
+  if(item.nome.includes("Ypê")){
+    return item.nome
+  }
+  })
+  
+  console.log(novaArray)
+
+  const frase = novaArray.map((itens)=>{
+    return `Compre ${itens.nome} por ${itens.preco}`
+  })
+  console.log(frase)
 // desafios
 
 // const pokemons = [
