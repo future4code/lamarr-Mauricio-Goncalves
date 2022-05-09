@@ -19,12 +19,17 @@ function retornaArrayInvertido(array) {
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-  
+  let array1 = array.sort(compararFuncoes)
+  return array1
+}
+function compararFuncoes(a, b){
+return a - b
+
 }
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-  
+    
 }
 
 // EXERCÍCIO 05
@@ -34,7 +39,7 @@ function retornaNumerosParesElevadosADois(array) {
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-  
+
 }
 
 // EXERCÍCIO 07
