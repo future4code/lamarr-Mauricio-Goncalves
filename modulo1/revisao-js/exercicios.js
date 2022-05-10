@@ -39,7 +39,15 @@ function retornaNumerosPares(array) {
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
- 
+    let arrayVazio = []
+    for(let numero of array){
+      if(numero %2==0){
+        
+       let conta = Math.pow(numero, 2 )
+       arrayVazio.push(conta)
+      }
+    }
+    return arrayVazio
 }
 
 // EXERCÍCIO 06
@@ -51,12 +59,27 @@ return arrayMaiorNum
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-
+  const maiorNumero= Math.max(num1, num2)
+  const menorNumero=  Math.min(num1, num2)
+  const divisivelPorMaior=  maiorNumero % menorNumero == 0
+  const diferencaNumero=  maiorNumero - menorNumero
+  
+  return {"maiorNumero":maiorNumero,
+  "maiorDivisivelPorMenor":divisivelPorMaior,
+  "diferenca":diferencaNumero}
 }
+
+
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
-   
+  let primeirosPares = []
+  for(let i=0; i<n.length; i++) {
+    primeirosPares.push(i);}
+  
+
+    return primeirosPares
+  
 }
 
 // EXERCÍCIO 09
