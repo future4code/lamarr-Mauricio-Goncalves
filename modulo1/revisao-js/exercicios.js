@@ -29,8 +29,11 @@ return a - b
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-    
-}
+   let novaArray = []
+   }
+   
+   
+
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
@@ -39,7 +42,9 @@ function retornaNumerosParesElevadosADois(array) {
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-
+    let arrayMaiorNum = Math.max(...array);
+    
+return arrayMaiorNum
 }
 
 // EXERCÍCIO 07
