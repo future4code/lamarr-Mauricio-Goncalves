@@ -29,9 +29,11 @@ return a - b
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-   let novaArray = []
-   }
-   
+    const par = x => x % 2 === 0
+    const array1 = array.filter(par)
+    return array1
+}
+
    
 
 
