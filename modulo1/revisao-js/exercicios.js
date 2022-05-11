@@ -87,22 +87,23 @@ function retornaNPrimeirosPares(n) {
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
-if(ladoA === ladoB && ladoA === ladoC && ladoB === ladoC){
-  return "Equilátero"
-}
-else if(ladoA === ladoB || ladoA === ladoC || ladoB === ladoC){
-  return "Isósceles"
-}
-else{
-  return "Escaleno"
-}
-  
+  if (ladoA === ladoB && ladoA === ladoC && ladoB === ladoC) {
+    return "Equilátero"
+  }
+  else if (ladoA === ladoB || ladoA === ladoC || ladoB === ladoC) {
+    return "Isósceles"
+  }
+  else {
+    return "Escaleno"
+  }
+
 
 }
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-
+ let segundoMaior = array.sort((a,b)=> a-b)
+ return [segundoMaior[segundoMaior.length-2],segundoMaior[1]]
 }
 
 // EXERCÍCIO 11
