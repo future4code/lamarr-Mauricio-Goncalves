@@ -13,7 +13,7 @@ function retornaTamanhoArray(array) {
 
 // EXERCÍCIO 02
 function retornaArrayInvertido(array) {
-  let array1= array.reverse(array)
+  let array1 = array.reverse(array)
   return array1
 }
 
@@ -22,51 +22,53 @@ function retornaArrayOrdenado(array) {
   let array1 = array.sort(compararFuncoes)
   return array1
 }
-function compararFuncoes(a, b){
-return a - b
+function compararFuncoes(a, b) {
+  return a - b
 
 }
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-    const par = x => x % 2 === 0
-    const array1 = array.filter(par)
-    return array1
+  const par = x => x % 2 === 0
+  const array1 = array.filter(par)
+  return array1
 }
 
-   
+
 
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
-    let arrayVazio = []
-    for(let numero of array){
-      if(numero %2==0){
-        
-       let conta = Math.pow(numero, 2 )
-       arrayVazio.push(conta)
-      }
+  let arrayVazio = []
+  for (let numero of array) {
+    if (numero % 2 == 0) {
+
+      let conta = Math.pow(numero, 2)
+      arrayVazio.push(conta)
     }
-    return arrayVazio
+  }
+  return arrayVazio
 }
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-    let arrayMaiorNum = Math.max(...array);
-    
-return arrayMaiorNum
+  let arrayMaiorNum = Math.max(...array);
+
+  return arrayMaiorNum
 }
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-  const maiorNumero= Math.max(num1, num2)
-  const menorNumero=  Math.min(num1, num2)
-  const divisivelPorMaior=  maiorNumero % menorNumero == 0
-  const diferencaNumero=  maiorNumero - menorNumero
-  
-  return {"maiorNumero":maiorNumero,
-  "maiorDivisivelPorMenor":divisivelPorMaior,
-  "diferenca":diferencaNumero}
+  const maiorNumero = Math.max(num1, num2)
+  const menorNumero = Math.min(num1, num2)
+  const divisivelPorMaior = maiorNumero % menorNumero == 0
+  const diferencaNumero = maiorNumero - menorNumero
+
+  return {
+    "maiorNumero": maiorNumero,
+    "maiorDivisivelPorMenor": divisivelPorMaior,
+    "diferenca": diferencaNumero
+  }
 }
 
 
@@ -74,45 +76,53 @@ function retornaObjetoEntreDoisNumeros(num1, num2) {
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
   let primeirosPares = []
-  for(let i=0; n>primeirosPares.length; i++) {
-    if(i %2==0){
-    primeirosPares.push(i);}
+  for (let i = 0; n > primeirosPares.length; i++) {
+    if (i % 2 == 0) {
+      primeirosPares.push(i);
+    }
   }
+  return primeirosPares
 
-  
-
-    return primeirosPares
-  
 }
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
+if(ladoA === ladoB && ladoA === ladoC && ladoB === ladoC){
+  return "Equilátero"
+}
+else if(ladoA === ladoB || ladoA === ladoC || ladoB === ladoC){
+  return "Isósceles"
+}
+else{
+  return "Escaleno"
+}
+  
 
 }
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-  
+
 }
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-   
+
 }
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
-   
+
 }
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
-   
+
 }
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
-  
+
 }
 
 // EXERCÍCIO 14
@@ -122,10 +132,10 @@ function retornaContasComSaldoAtualizado(contas) {
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  
+
 }
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-   
+
 }
