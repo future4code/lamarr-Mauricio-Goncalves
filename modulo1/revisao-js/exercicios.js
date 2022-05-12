@@ -102,23 +102,51 @@ function classificaTriangulo(ladoA, ladoB, ladoC) {
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
- let segundoMaior = array.sort((a,b)=> a-b)
- return [segundoMaior[segundoMaior.length-2],segundoMaior[1]]
+  let segundoMaior = array.sort((a, b) => a - b)
+  return [segundoMaior[segundoMaior.length - 2], segundoMaior[1]]
 }
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
+let nomeFilme = filme.nome
+let anoLançamento= filme.ano
+let diretorFilme= filme.diretor
+let atoresFilme= filme.atores
+return{ 
+  
+  "Venha assistir ao filme": nomeFilme,
+ "de": anoLançamento,
+ "dirigido por": diretorFilme,
+ "e estrelado por": atoresFilme
 
+}
+
+//"Venha assistir ao filme O Diabo Veste Prada, de 2006,
+// dirigido por David Frankel e estrelado por Meryl Streep, 
+//Anne Hathaway, Emily Blunt, Stanley Tucci."
 }
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
+  const pessoaAnonima = {...pessoa,
+    nome: "ANÔNIMO"
 
 }
+return pessoaAnonima
+}
+
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
-
+let pessoaAptas = []
+for(let pessoa of pessoas){
+  if(
+    pessoa.altura >= 1.5 && pessoa.idade >= 14 && pessoa.idade <60
+  ){
+    pessoaAptas.push(pessoa)
+  }
+}
+return pessoaAptas
 }
 
 // EXERCÍCIO 13B
