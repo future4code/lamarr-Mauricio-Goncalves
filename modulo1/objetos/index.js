@@ -140,13 +140,3 @@
 
 // console.log(carrinho.push(fruta1, fruta2, fruta3))
 // console.log(carrinho)
-
-function calculamenor5(num){ 
-    var array = [];
-    for(var i=0; i<num; i++) {
-      array.push(i);
-    }
-    return array;
-  }
-   
-  console.log(calculamenor5(5));
