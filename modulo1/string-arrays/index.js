@@ -89,9 +89,9 @@
 // let fraseSeparada = [frase.split(" ")]
 // console.log(fraseSeparada)
 
-const frutas = ["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"]
-const indice = frutas.indexOf("Abacaxi")
-console.log(`O indice da palavra abacaxi é: ${indice}, e o tamanho do array é: ${frutas.length}`)
+// const frutas = ["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"]
+// const indice = frutas.indexOf("Abacaxi")
+// console.log(`O indice da palavra abacaxi é: ${indice}, e o tamanho do array é: ${frutas.length}`)
 
 
 
