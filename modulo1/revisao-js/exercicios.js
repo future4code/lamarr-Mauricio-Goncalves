@@ -108,54 +108,44 @@ function retornaSegundoMaiorESegundoMenor(array) {
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-let nomeFilme = filme.nome
-let anoLançamento= filme.ano
-let diretorFilme= filme.diretor
-let atoresFilme= filme.atores
-return{ 
-  
-  "Venha assistir ao filme": nomeFilme,
- "de": anoLançamento,
- "dirigido por": diretorFilme,
- "e estrelado por": atoresFilme
-
-}
-
-//"Venha assistir ao filme O Diabo Veste Prada, de 2006,
-// dirigido por David Frankel e estrelado por Meryl Streep, 
-//Anne Hathaway, Emily Blunt, Stanley Tucci."
+  let nomeFilme = filme.nome
+  let anoLançamento = filme.ano
+  let diretorFilme = filme.diretor
+  let atoresFilme = filme.atores
+  return `Venha assistir ao filme ${nomeFilme}, de ${anoLançamento}, dirigido por ${diretorFilme} e estrelado por ${atoresFilme.join(", ")}.`
 }
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
-  const pessoaAnonima = {...pessoa,
+  const pessoaAnonima = {
+    ...pessoa,
     nome: "ANÔNIMO"
 
-}
-return pessoaAnonima
+  }
+  return pessoaAnonima
 }
 
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
-let pessoaAptas = []
-for(let pessoa of pessoas){
-  if(
-    pessoa.altura >= 1.5 && pessoa.idade > 14 && pessoa.idade <=60
-  ){
-    pessoaAptas.push(pessoa)
+  let pessoaAptas = []
+  for (let pessoa of pessoas) {
+    if (
+      pessoa.altura >= 1.5 && pessoa.idade > 14 && pessoa.idade <= 60
+    ) {
+      pessoaAptas.push(pessoa)
+    }
   }
-}
-return pessoaAptas
+  return pessoaAptas
 }
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
   let pessoaInaptas = []
-  for(let pessoa of pessoas){
-    if(
-      pessoa.altura < 1.5  || pessoa.idade <= 14  || pessoa.idade > 60
-    ){
+  for (let pessoa of pessoas) {
+    if (
+      pessoa.altura < 1.5 || pessoa.idade <= 14 || pessoa.idade > 60
+    ) {
       pessoaInaptas.push(pessoa)
     }
   }
@@ -164,15 +154,29 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
+  let saldoAtualizado = []
+  for (let conta of contas) {
+
+
+  }
 
 }
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
+  let array = consultas.sort(function (a, b) {
+    if (a.nome > b.nome) { return 1; }
+    if (a.nome < b.nome) { return -1; }
 
+  })
+  return array
 }
+
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-
+  let array = consultas.sort(function (a, b) {
+    return a.datadaConsulta < b.dataDaConsulta
+  })
+  return array
 }
