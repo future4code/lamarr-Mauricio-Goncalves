@@ -122,21 +122,31 @@
 
 // d) Imprima a variável `carrinho` e garanta que ela agora seja um **array preenchido com três objetos.**
 
-let carrinho = []
+// let carrinho = []
 
-const fruta1 = {
-    nome: "uva",
-    disponibilidade: true
-}
-const fruta2 = {
-    nome: "banana",
-    disponibilidade: true
-}
-const fruta3 = {
-    nome:"maça",
-    disponibilidade: true
+// const fruta1 = {
+//     nome: "uva",
+//     disponibilidade: true
+// }
+// const fruta2 = {
+//     nome: "banana",
+//     disponibilidade: true
+// }
+// const fruta3 = {
+//     nome:"maça",
+//     disponibilidade: true
 
-}
+// }
 
-console.log(carrinho.push(fruta1, fruta2, fruta3))
-console.log(carrinho)
+// console.log(carrinho.push(fruta1, fruta2, fruta3))
+// console.log(carrinho)
+
+function calculamenor5(num){ 
+    var array = [];
+    for(var i=0; i<num; i++) {
+      array.push(i);
+    }
+    return array;
+  }
+   
+  console.log(calculamenor5(5));
