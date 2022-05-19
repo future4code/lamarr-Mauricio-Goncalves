@@ -1,0 +1,10 @@
+Resolvendo problema
+
+
+Primeiramente ler o enunciado com atenção;
+segundo pegar os possiveis nomes para as variaveis e/ou funções
+terceiro, pensar qual vai ser o resultado do codigo
+quarto fazer um esquema no qual voce vizualize o codigo do inicio ao fim
+quinto criar codigo na forma bruta para ver o funcionamento
+sexto, fazer funcionar mesmo que esteja muito feio
+setimo voltar para o codigo para ver se pode melhorar ele
