@@ -10,7 +10,7 @@ body {
 .header-container {
     height: 100vh;
     width: 100vw;
-    background-color: aqua;
+    background-color: rgb(35, 40, 37);
     background-image: url();
     background-repeat: no-repeat;
     background-position: center;
@@ -79,7 +79,7 @@ a:hover {
 .checkbox .trace {
     width: 50px;
     height: 2px;
-    background-color: rgb(13, 12, 12);
+    background-color: rgb(240, 241, 240);
     position: absolute;
     border-radius: 4px;
     transition: 0.5s ease-in-out;
@@ -192,7 +192,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: aqua;
+    background-color: rgb(35, 40, 37);
     background-image: url();
     background-position: center;
     background-size: cover;
@@ -259,7 +259,7 @@ transition: 0.5s ease-in-out;
 .footer {
     width: 100%;
     height: 100px;
-    background-color: aqua;
+    background-color: rgb(35, 40, 37);
     display: flex;
     align-items: center;
     justify-content: center;
