@@ -193,7 +193,25 @@ a:hover {
     align-items: center;
     justify-content: center;
     background-color: rgb(35, 40, 37);
-    background-image: url();
+    background-image: url(foto/Facebook_logo_\(square\).png.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(0.5);
+    color: black;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+.card-insta{
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    margin: 3rem 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(35, 40, 37);
+    background-image: url(foto/instagram-logo.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -245,12 +263,25 @@ transition: 0.5s ease-in-out;
 .card:hover {
     filter: unset;
 }
+.card-insta:hover {
+    filter: unset;
+}
 .card:hover > .card-wrapper::before{
     height: 250px;
     width: 250px;
     opacity: 1;
 }
+.card-insta:hover > .card-wrapper::before{
+    height: 250px;
+    width: 250px;
+    opacity: 1;
+}
 .card:hover > .card-wrapper p {
+    opacity: 1;
+    visibility: visible;
+    font-size: 14px;
+}
+.card-insta:hover > .card-wrapper p {
     opacity: 1;
     visibility: visible;
     font-size: 14px;
