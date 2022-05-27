@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
 
 body {
     margin: 0;
@@ -10,7 +13,7 @@ body {
 .header-container {
     height: 100vh;
     width: 100vw;
-    background-color: rgb(35, 40, 37);
+    background-color: rgb(85, 121, 99);
     background-image: url();
     background-repeat: no-repeat;
     background-position: center;
@@ -79,7 +82,7 @@ a:hover {
 .checkbox .trace {
     width: 50px;
     height: 2px;
-    background-color: rgb(240, 241, 240);
+    background-color: black;
     position: absolute;
     border-radius: 4px;
     transition: 0.5s ease-in-out;
@@ -192,7 +195,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(35, 40, 37);
+    background-color: rgb(85, 121, 99);
     background-image: url(foto/Facebook_logo_\(square\).png.webp);
     background-position: center;
     background-size: cover;
@@ -210,7 +213,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(35, 40, 37);
+    background-color: rgb(85, 121, 99);
     background-image: url(foto/instagram-logo.png);
     background-position: center;
     background-size: cover;
@@ -223,7 +226,7 @@ a:hover {
 .card-text {
     width: 40%;
     letter-spacing: 1px;
-    color: rgb(109, 109, 109);
+    color: black;
 }
 
 .card-wrapper{
@@ -290,9 +293,55 @@ transition: 0.5s ease-in-out;
 .footer {
     width: 100%;
     height: 100px;
-    background-color: rgb(35, 40, 37);
+    background-color:rgb(85, 121, 99);
     display: flex;
     align-items: center;
     justify-content: center;
     color: black;
+    bottom: 0;
+}
+.imagem-sobre{
+    width: 10%;
+    float:right;
+}
+.header-sobre{
+    background-color:rgb(85, 121, 99) ;
+    color: azure;
+    margin-bottom: 10px;
+    height: 80px;
+}
+.h1-sobre{
+    text-align: center;
+}
+.p-sobre{
+    font-size: 20px;
+    margin-top: 100px;
+    margin-bottom: 120px;
+}
+
+.footer-sobre {
+    width: 100%;
+    height: 100px;
+    background-color:rgb(85, 121, 99);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: azure;
+    bottom: 0;
+    position: absolute;
+}
+
+.tabela-emprego{
+ margin: 40px;
+ justify-content: center;
+ display: flex;
+}
+
+.h2-sobre{
+    justify-content: center;
+ display: flex;
+}
+.ccv{
+    justify-content: center;
+ display: flex;
 }
