@@ -225,7 +225,7 @@ a:hover {
 .card-text {
     width: 50%;
     letter-spacing: 2px;
-    color: rgb(12, 12, 14);
+    color: rgb(83, 83, 91);
     justify-content: right;
     align-items: right;
     display: flex;
@@ -331,18 +331,21 @@ transition: 0.5s ease-in-out;
     justify-content: center;
     color: azure;
     bottom: 0;
-    position: absolute;
+    position: relative;
+    margin-top: 100px;
 }
 
 .tabela-emprego{
- margin: 40px;
+ margin-top: 40px;
  justify-content: center;
  display: flex;
+ margin-bottom: 10px;
 }
 
 .h2-sobre{
     justify-content: center;
  display: flex;
+ margin-top: 10px;
 }
 .ccv{
     justify-content: center;
@@ -358,4 +361,95 @@ display: block;
 border: 1px solid azure;
 opacity: 0;
 transition: 0.5s ease-in-out;
+}
+
+.texto-p{
+    align-items: left;
+    display: flex;
+    justify-content: left;
+    position: relative;
+    height: 100px;
+    width: +110px;
+    bottom: -20px;
+}
+
+.footer-sobreee {
+    width: 100%;
+    height: 100px;
+    background-color:rgb(85, 121, 99);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: azure;
+    bottom: 0;
+    position: absolute;
+    margin-top: 300px;
+}
+.footer-sobreeee {
+    width: 100%;
+    height: 100px;
+    background-color:rgb(85, 121, 99);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: azure;
+    bottom: 0;
+    position: absolute;
+    margin-top: 300px;
+}
+
+#titulo{
+    font-family: sans-serif;
+    color: black;
+    margin-left: 7%;
+}
+#subtitulo{
+    font-family: sans-serif;
+    color: black;
+    margin-left: 10%;
+}
+fieldset {
+    border: 0;
+}
+body{
+    background-color: white;
+    font-family: sans-serif;
+    font-size: 1em;
+    color: black;
+
+    justify-content: center;
+}
+input, select, textarea, button{
+    border-radius: 5px;
+}
+.campo{
+    margin-bottom: 1em;
+}
+.campo label{
+    margin-bottom: 0.2em;
+    color: black;
+    display: block;
+}
+
+fieldset{
+    float: left;
+    margin-right: 1em;
+}
+.campo select option {
+  padding-right: 1em;  
+}
+.campo input:focus, .campo select:focus, .campo textarea:focus{
+    background: white;
+}
+.botao{
+    font-size: 1.2em;
+    background: white;
+    border: 0;
+    margin-bottom: 1em;
+    color: black;
+    padding: 0.2em 0.6em;
+    box-shadow: 2px 2px 2px rgb(0,0,0,0.2);
+    text-shadow: 1px 1px 1px rgb(0,0,0,0.5);
+    position: absolute;
+
 }
