@@ -221,6 +221,7 @@ a:hover {
     color: black;
     cursor: pointer;
     transition: 0.5s ease-in-out;
+    background-image: url('./img/mercer.jpg');
 }
 .card-text {
     width: 50%;
