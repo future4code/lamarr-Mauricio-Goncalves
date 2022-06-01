@@ -22,7 +22,12 @@ nav {
 .container-div{
     display: flex;
     align-items: stretch;
+    
 }
+.nav-div{
+    display: flex;
+}
+
 
 #icon{
     width: 20px;
