@@ -1,0 +1,93 @@
+.container-principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    max-height: 100%;
+}
+.header{
+    width: 100vw;
+    background-color: aqua;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: -10px;
+    margin-right: -10px;
+    margin-left: -10px;
+
+}
+
+.botoes{
+  padding: 10px 8px;
+  width: 20px;
+  color: rgb(241, 241, 244);
+  background-color: rgb(200, 115, 115);
+  border: 1px solid;
+  border-radius: 5px;
+  text-align: right;
+  user-select: none;
+  cursor: pointer;
+}
+
+.footer{
+display: flex;
+flex-direction: column;
+width: 100vw;
+align-items: center;
+justify-content: center;
+background-color: aqua;
+position: fixed;
+bottom: 0;
+left: 0;
+}
+.redes-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-estoque{
+padding: 20px;
+color: chocolate;
+border: 10px solid;
+background-color: aqua;
+text-align: center;
+
+}
+
+.tabela{
+    border: 1px solid;
+    border-collapse: collapse;
+ }
+.imagem{
+width: 1900px;
+height: 85vh;
+    
+}
+
+.header-boder{
+    background-color: aquamarine;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo-texto{
+    margin-left: 30px;
+}
+.menu li{
+    display: inline-block;
+    margin: 0 10px;
+
+}
+.menu li a{
+font-size: 20px;
+text-decoration: none;
+color: rgb(9, 9, 9);
+text-transform: uppercase;
+}
+.menu li a:hover{
+    background-color: rgb(174, 156, 156);
+}
+
