@@ -9,3 +9,17 @@
 .foto{
  width: 300px;
 }
+
+button{
+  background-color: rgb(98, 157, 98);
+  cursor: pointer;
+  border: 1px solid rgb(98, 157, 98) ;
+  border-radius: 50px;
+  transition: 0.5s ;
+  font-size: 20px;
+}
+
+button:hover{
+background-color: white;
+color: rgb(98, 157, 98);
+}
