@@ -1,59 +1,6 @@
 
-import { useState } from 'react'
-import styled from 'styled-components'
-import Logo from './img/labenu.jpg'
-
-
-const Header = styled.header`
-background-color: white;
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 0;
-img{
-  width: 50px;
-  height: 50px;
-}
-h1{
-  font-size: 30px;
-  color: black;
-}
-`
-const Coluna1 = styled.section`
-background-color: orange;
-height: 88vh;
-width: 10vw;
-float: left;
-`
-const Coluna2 = styled.section`
-background-color: orange;
-height: 88vh;
-width: 10vw;
-float: right;
-`
-const Input = styled.section`
-display: flex;
-margin-top: 40%;
-label{
-  margin-right: 10px;
-}
-input{
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-
-`
-
-const Footer = styled.footer`
- background-color: gray;
- color: black;
- padding: 0;
- width: 100%;
- display: flex;
- padding: 0 10px;
- justify-content: center;
-`
+import Imagem from "./Labenu.jpg";
+import {Pai, AreaLaranja, Cabecalho, AreaMensagem, Rodape} from "./style"; 
 
 function App() {
   const [inputNome, setInputNome] = useState("")
@@ -85,22 +32,12 @@ function App() {
       </div>
     )
   })
- 
   return (
-    
-    <div>
-           
-       <Header> 
-      <section>
-        <img src={Logo} alt="logo"/>
-      </section>
-      <h1>LapZap</h1>
-       </Header>
-       <body>
-        <Coluna1></Coluna1>
-        <Coluna2></Coluna2>
-       </body>
-        <Input>
+    <Pai>
+      <Cabecalho><img src={Imagem} alt="Labenu"/><h1>LabZap</h1></Cabecalho>
+      <AreaLaranja/>
+        <AreaMensagem>
+          <form>
           <label>
             Remetente:
             <input placeholder='Insira um nome'
@@ -118,10 +55,11 @@ function App() {
             onChange={handleInputMsg}/>
           </label>
           <button onClick={addMensagem}>Enviar Mensagem</button>
-        </Input>
-            {listaDeUsuario}
-       <Footer>Copyright C 2022 Labenu All rights reserved</Footer>
-    </div>
+          </form>
+        </AreaMensagem>
+      <AreaLaranja/>
+      <Rodape>Copyright © 2022 Labenu All rights reserved. R. Pais Leme, 215, Conjunto 820 Pinheiros. CEP 05424-150 </Rodape>
+    </Pai>
   );
 }
 
