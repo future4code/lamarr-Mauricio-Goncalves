@@ -24,18 +24,27 @@ export const Cabecalho=styled.header`
 `;
 
 export const AreaMensagem=styled.main`
-  height: 80vh;
-  margin: 20px;
+  height: 90vh;
   display: flex;
-  align-items: flex-end;
+  align-items: end;
+  box-shadow: 3px 3px 3px 4px darkgray;
+background-color: gray;
   label{
+    
     margin: 10px;
   }
   button{
+    grid-column-end: 2;
     margin-left: 10px;
   }
   #mensagem{
     width: 400px;
+  }
+  div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
   }
 `;
 

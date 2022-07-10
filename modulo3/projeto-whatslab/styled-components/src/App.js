@@ -1,6 +1,9 @@
 
-import Imagem from "./Labenu.jpg";
-import {Pai, AreaLaranja, Cabecalho, AreaMensagem, Rodape} from "./style"; 
+import Logo from './img/labenu.jpg'
+import {Pai, AreaLaranja, Cabecalho, AreaMensagem, Rodape, Card} from "./style"; 
+import { useState } from 'react'
+
+
 
 function App() {
   const [inputNome, setInputNome] = useState("")
@@ -17,7 +20,8 @@ function App() {
     setInputMsg(e.target.value)
   }
 
-  const addMensagem = () => {
+  const addMensagem = (e) => {
+    e.preventDefault(e);
     const novaMensagem = {nome: inputNome, mensagem: inputMsg}
     const novaListaMensagem =[...usuarios,novaMensagem]
     setUsuario(novaListaMensagem)
@@ -34,12 +38,13 @@ function App() {
   })
   return (
     <Pai>
-      <Cabecalho><img src={Imagem} alt="Labenu"/><h1>LabZap</h1></Cabecalho>
+      <Cabecalho><img src={Logo} alt="Labenu"/><h1>LabZap</h1></Cabecalho>
       <AreaLaranja/>
         <AreaMensagem>
           <form>
+
+          <div>{listaDeUsuario}</div>
           <label>
-            Remetente:
             <input placeholder='Insira um nome'
              value={inputNome} 
              type="texto" 
@@ -49,6 +54,7 @@ function App() {
             <input 
             placeholder='Insira uma mensagem'
             value={inputMsg}
+            id="mensagem"
             type="texto" 
             name="remetente" 
             size="50"
