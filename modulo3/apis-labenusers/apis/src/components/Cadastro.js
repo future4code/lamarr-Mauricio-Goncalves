@@ -18,7 +18,7 @@ const deletaUsuario = ((id)=> {
         getAllUsers()
         alert('Deu certo');
     }).catch(()=>{
-        alert("deu ruim")
+        
     })
 
 
@@ -77,7 +77,7 @@ const deletaUsuario = ((id)=> {
         
         <>
           <>{compLista}</>
-        <button>Trocar de tela</button> <br></br>
+        
         
         <input type='text'
         value={myName}
