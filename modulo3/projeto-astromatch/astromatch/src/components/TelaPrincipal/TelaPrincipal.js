@@ -1,17 +1,40 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
+import Matchs from "../Matchs/Matchs"
 import { Buttons, ContainerPrincipal, Imagem, ContainerButtons, ContaionerBio, Butao, ContainerMatch } from "./Styled"
+import Coracao from './img/coracao.png'
+import Dislike from './img/dislike.png'
+import MeusMatchs from './img/meumatchs.png'
+import Lixeira from './img/lixeira.png'
 
 
 
-export const TelaPrincipal = () => {
+export const TelaPrincipal = (props) => {
+    const {goMatchs} = props;
     const [persons, setPersons] = useState([])
 
 
     useEffect(() => {
         getUsers();
     }, []);
-    const url = 'https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:Mauricio-Goncalves-Lammar/person'
+
+    useEffect(() => {
+    
+        resetarMatches();
+    },);
+
+  const DesLike = (id, escolha) => {
+    escolhaMatches(id,escolha);
+    getUsers();
+  }
+
+  const Like = (id, escolha) => {
+    escolhaMatches(id,escolha);
+    getUsers();
+  }
+
+
+    const url = 'https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:Mauricio/person'
 
 
     const getUsers = () => {
@@ -23,22 +46,58 @@ export const TelaPrincipal = () => {
             })
     }
 
+
+    const escolhaMatches = (id, escolha) => {
+        const body = {
+            id: id,
+            choice: escolha
+        };
+        axios.post(
+           "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:Mauricio/choose-person",
+           body
+        )
+        .then((response)=>{
+            console.log(response);
+        })
+        .catch((err)=>{
+            console.log(err);
+        });
+    };
+
+    const resetarMatches = () => {
+        axios.put(
+            "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:Mauricio/clear"
+        ) 
+        .then((response)=>{
+            console.log(response);
+        })
+        .catch((err)=>{
+            console.log(err);
+        });
+    };
+
     return (
         <>
+                <Butao onClick={() => resetarMatches()}> <img src={Lixeira} alt="" /></Butao>
             {persons.map((item) => {
                 return (
                     <ContainerPrincipal>
                         <ContainerMatch>
                         <h1>Astromatch</h1>
-                        <Butao> <img src="https://cdn-icons-png.flaticon.com/128/3079/3079258.png" alt="" /></Butao></ContainerMatch>
+                        <Butao > <img src={MeusMatchs} alt="" /></Butao></ContainerMatch>
                         <Imagem src={item.photo} alt="" />
                         <ContaionerBio>
                           <p>{item.name + ", "}  
                              {item.age} </p> 
                           <p>{item.bio}</p> </ContaionerBio>
                         <ContainerButtons>
-                            <Buttons><img src="https://cdn-icons-png.flaticon.com/128/458/458594.png" /></Buttons>
-                            <Buttons> <img src="https://cdn-icons.flaticon.com/png/128/3669/premium/3669698.png?token=exp=1659656029~hmac=317d1243cb3343979ed0af87787c148a" alt="" /></Buttons></ContainerButtons>
+                            <Buttons
+                            onClick={() => DesLike(item.id, false)}
+                            ><img src={Dislike} /></Buttons>
+                            <Buttons
+                             onClick={() => Like(item.id, true)}> 
+                             <img src={Coracao} alt="" /></Buttons>
+                             </ContainerButtons>
                     </ContainerPrincipal>
                 )
             })}
