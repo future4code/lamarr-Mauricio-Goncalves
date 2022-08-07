@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { TelaPrincipal } from "./components/TelaPrincipal/TelaPrincipal";
 import {Matchs} from "./components/Matchs/Matchs"
 
@@ -23,7 +23,7 @@ function App() {
 //     setPagina(p)
 //  }
   return (
-    <TelaPrincipal/>
+    <Matchs/>
   );
 }
 

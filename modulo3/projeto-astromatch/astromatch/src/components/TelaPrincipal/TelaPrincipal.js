@@ -9,19 +9,15 @@ import Lixeira from './img/lixeira.png'
 
 
 
-export const TelaPrincipal = (props) => {
-    const {goMatchs} = props;
+export const TelaPrincipal = () => {
     const [persons, setPersons] = useState([])
-
-
+    
+    
+    
     useEffect(() => {
         getUsers();
     }, []);
-
-    useEffect(() => {
-    
-        resetarMatches();
-    },);
+  
 
   const DesLike = (id, escolha) => {
     escolhaMatches(id,escolha);
@@ -75,11 +71,12 @@ export const TelaPrincipal = (props) => {
             console.log(err);
         });
     };
+   
 
     return (
         <>
                 <Butao onClick={() => resetarMatches()}> <img src={Lixeira} alt="" /></Butao>
-            {persons.map((item) => {
+            {persons.map((item, index) => {
                 return (
                     <ContainerPrincipal>
                         <ContainerMatch>

@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react"
 import axios from "axios";
 import { TelaPrincipal } from "../TelaPrincipal/TelaPrincipal";
-import {ContainerPrincipal} from './Styled'
+import {ContainerPrincipal, Imagem, Matches,Li, Astrodiv} from './Styled'
+import Foto from './img/home.png'
 
+export const Matchs =() => {
 
-export const Matchs =(props) => {
-    const {goMatchs} = props;
     const [matches, setMatches] = useState([]);
     
     useEffect(()=> {
@@ -14,7 +14,7 @@ export const Matchs =(props) => {
 
 
     const meusMatches = () =>{
-        axios.get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/Mauricio/matches")
+        axios.get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:Mauricio/matches")
         .then((response) =>{
             setMatches(response.data.matches)
         })
@@ -24,19 +24,18 @@ export const Matchs =(props) => {
     };
     return (
         <ContainerPrincipal>
-           
+           <Astrodiv>
+                <button><img src={Foto} /></button>
                 <h1>AstroMatch</h1>
-                <button>Home</button>
-                
+                </Astrodiv>
     {matches.map((pessoa) => {
         return (
-            <div>
-            <li key={pessoa.id}>
-                <img src={pessoa.photo} alt={pessoa.photo_alt} />
+            <Matches>
+            <Li key={pessoa.id}>
+                <Imagem src={pessoa.photo} alt={pessoa.photo_alt} />
                 <p>{pessoa.name}</p>
-            </li>
-            <button onClick={goMatchs}>Home</button>
-            </div>)
+            </Li>
+            </Matches>)
         })}
     </ContainerPrincipal>
 
