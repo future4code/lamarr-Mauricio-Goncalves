@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ContainerPrincipal = styled.div `
     width: 400px;
-    height: 670px;
+    height: 970px;
     position: fixed;
     border: 1px solid #0000;
     background-color: #836fff;
@@ -29,8 +29,8 @@ export const Astrodiv = styled.div `
      margin-right: 5px;
      &:hover{
         transform: scale(1.15);
-    };
-`
+    };}
+    `
 
 
 
