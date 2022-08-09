@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
-import Matchs from "../Matchs/Matchs"
 import { Buttons, ContainerPrincipal, Imagem, ContainerButtons, ContaionerBio, Butao, ContainerMatch } from "./Styled"
 import Coracao from './img/coracao.png'
 import Dislike from './img/dislike.png'
 import MeusMatchs from './img/meumatchs.png'
 import Lixeira from './img/lixeira.png'
-
+import { useNavigate } from "react-router-dom";
 
 
 export const TelaPrincipal = () => {
     const [persons, setPersons] = useState([])
-    
+    const navigate = useNavigate();
     
     
     useEffect(() => {
@@ -71,25 +70,25 @@ export const TelaPrincipal = () => {
             console.log(err);
         });
     };
-   
-
     return (
         <>
-                <Butao onClick={() => resetarMatches()}> <img src={Lixeira} alt="" /></Butao>
+        <Butao onClick={() => resetarMatches()}> <img src={Lixeira} alt="" /></Butao>
             {persons.map((item, index) => {
                 return (
+                    
                     <ContainerPrincipal>
+                        
                         <ContainerMatch>
                         <h1>Astromatch</h1>
-                        <Butao > <img src={MeusMatchs} alt="" /></Butao></ContainerMatch>
-                        <Imagem src={item.photo} alt="" />
+                        <Butao onClick={() => navigate("/Matchs")} > <img src={MeusMatchs} alt="" /></Butao></ContainerMatch>
+                        <Imagem src={item.photo} />
                         <ContaionerBio>
                           <p>{item.name + ", "}  
                              {item.age} </p> 
                           <p>{item.bio}</p> </ContaionerBio>
                         <ContainerButtons>
                             <Buttons
-                            onClick={() => DesLike(item.id, false)}
+                            onClick={() => DesLike(item.id,false)}
                             ><img src={Dislike} /></Buttons>
                             <Buttons
                              onClick={() => Like(item.id, true)}> 

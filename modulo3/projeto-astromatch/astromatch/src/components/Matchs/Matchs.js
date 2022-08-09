@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from "react"
 import axios from "axios";
-import { TelaPrincipal } from "../TelaPrincipal/TelaPrincipal";
 import {ContainerPrincipal, Imagem, Matches,Li, Astrodiv} from './Styled'
 import Foto from './img/home.png'
+import { useNavigate } from "react-router-dom";
 
 export const Matchs =() => {
 
     const [matches, setMatches] = useState([]);
-    
+    const navigate = useNavigate();
     useEffect(()=> {
         meusMatches();
     });
@@ -25,7 +25,7 @@ export const Matchs =() => {
     return (
         <ContainerPrincipal>
            <Astrodiv>
-                <button><img src={Foto} /></button>
+                <button onClick={() => navigate("/")}><img src={Foto} /></button>
                 <h1>AstroMatch</h1>
                 </Astrodiv>
     {matches.map((pessoa) => {
