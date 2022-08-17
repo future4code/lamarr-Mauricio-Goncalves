@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom"
 import * as MyRoute from '../router/codinator'
 import { useRequestData } from "../Hooks/useRequestData";
 import { BASE_URL } from "../constants/constants";
-
+import {ContainerTrips,ContainerCard} from './Style'
 
 
 export const ListTripsPage =() => {
@@ -11,18 +11,23 @@ export const ListTripsPage =() => {
     const [dataUser,isLoaddingUser,erroUser]=useRequestData(`${BASE_URL}trips`)
 
     const user=dataUser&&dataUser.trips.map((trip)=>{
-        return<li>{trip.name}</li>
+        return<ContainerCard><b>Nome:</b> {trip.name}<br></br>
+                 <b> Planeta:</b> {trip.planet}<br></br>
+                 <b> Data:</b> {trip.date}<br></br>
+                 <b> Descrição:</b> {trip.description}<br></br>
+                 <b> Duração:</b> {trip.durationInDays} Dias</ContainerCard>
         })
     return (
-        <>
+        <ContainerTrips>
+        <button onClick={()=>{MyRoute.goToApplicationFormPage(navigate)}}>Inscreva-se</button>
+        <button onClick={()=>{MyRoute.goToBack(navigate)}}>voltar</button>
      <h1>Lista de viagems</h1>
          {isLoaddingUser&&"...Carregando!!! ...."}
         <ul>
         {!isLoaddingUser&&dataUser&&user}
         </ul>
         {!isLoaddingUser&&!dataUser&&erroUser}
-        <button onClick={()=>{MyRoute.goToBack(navigate)}}>voltar</button>
-        </>
+        </ContainerTrips>
     )
 }
 
