@@ -5,7 +5,7 @@ import * as MyRoute from '../router/codinator'
 export const CreateTripPage =() => {
     const navigate=useNavigate()
     const [form, onChange] =useForm({nome: "",planet: "",date: "",description: "",durationInDays: ""})
-
+    useProtectedPage();
     const onClickCreate = (e) => {
         e.preventDefault()
         createTrip(form)

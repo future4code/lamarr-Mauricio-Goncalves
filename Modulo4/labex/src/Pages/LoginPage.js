@@ -2,24 +2,25 @@ import React from "react";
 import {useNavigate} from "react-router-dom"
 import {useForm} from "../Hooks/useForm"
 import * as MyRoute from '../router/codinator'
-import { useState } from "react";
 import { BASE_URL } from "../constants/constants";
 import axios from "axios";
 
 export const LoginPage =() => {
     const navigate=useNavigate()
 
-   const [form, onChange] =useForm({email: "", password: ""})
+   const [form, onChange, clear] =useForm({email: "", password: ""})
 
 
     const fazerLogin = (event) => {
         event.preventDefault()
         axios.post(`${BASE_URL}login`,form)
-        .then((response)=> console.log(response.data))
-        .catch((error)=> console.log(error.message))
-      
-        
-    }
+        .then(response => {
+            localStorage.setItem("token", response.data.token)
+            navigate("/admin/trips/list")
+        })
+        .catch((error)=> console.log(error.message));
+        clear();
+      }
 
     return (
         <div>
