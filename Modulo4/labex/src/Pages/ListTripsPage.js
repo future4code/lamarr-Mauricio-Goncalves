@@ -8,18 +8,20 @@ import {ContainerTrips,ContainerCard} from './Style'
 
 export const ListTripsPage =() => {
     const navigate=useNavigate()
-    const [dataUser,isLoaddingUser,erroUser]=useRequestData(`${BASE_URL}trips`)
+    const token = localStorage.removeItem("token");
+    const [dataUser,isLoaddingUser,erroUser]=useRequestData(`${BASE_URL}mauricio-goncalves-lamarr/trips`)
 
     const user=dataUser&&dataUser.trips.map((trip)=>{
-        return<ContainerCard><b>Nome:</b> {trip.name}<br></br>
-                 <b> Planeta:</b> {trip.planet}<br></br>
-                 <b> Data:</b> {trip.date}<br></br>
-                 <b> Descrição:</b> {trip.description}<br></br>
-                 <b> Duração:</b> {trip.durationInDays} Dias</ContainerCard>
+        return<ContainerCard key={trip.id}><b>Nome:</b> {trip.name}<br></br>
+                 <p > Planeta {trip.planet}</p>
+                 <p > Data: {trip.date}</p>
+                 <p > Descrição:{trip.description}</p>
+                 <p > Duração: {trip.durationInDays} Dias</p>
+                 <button onClick={()=>{MyRoute.goToApplicationFormPage(navigate)}}>Inscrever-se</button>
+                 </ContainerCard>
         })
     return (
         <ContainerTrips>
-        <button onClick={()=>{MyRoute.goToApplicationFormPage(navigate)}}>Inscreva-se</button>
         <button onClick={()=>{MyRoute.goToBack(navigate)}}>voltar</button>
      <h1>Lista de viagems</h1>
          {isLoaddingUser&&"...Carregando!!! ...."}

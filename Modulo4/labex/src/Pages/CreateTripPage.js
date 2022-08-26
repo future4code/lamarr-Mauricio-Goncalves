@@ -1,38 +1,64 @@
 import React from "react";
 import {useNavigate} from "react-router-dom"
+import { useProtectedPage } from "../Hooks/useProtectedPage";
+import axios from "axios"
 import {useForm} from "../Hooks/useForm"
 import * as MyRoute from '../router/codinator'
+import { BASE_URL } from "../constants/constants";
 export const CreateTripPage =() => {
-    const navigate=useNavigate()
-    const [form, onChange] =useForm({nome: "",planet: "",date: "",description: "",durationInDays: ""})
     useProtectedPage();
-    const onClickCreate = (e) => {
-        e.preventDefault()
-        createTrip(form)
-    }
+    const navigate=useNavigate()
 
+    
+    
+    const [form, onChange, clear] =useForm({name: "",planet: "",date: "",description: "",durationInDays: ""})
+        const creatTrip = (e) => {
+            e.preventDefault()
+            const body = {
+                name: form.name,
+                planet: form.planet,
+                date: form.date,
+                description: form.description,
+                durationInDays: form.durationInDays }
+            console.log(body);
+            axios.post(`${BASE_URL}mauricio-goncalves-lamarr/trips`,body,{headers:{auth:localStorage.getItem('token')}})
+            .then((response)=>{
+                alert("Viagem criada com Sucesso!")
+                clear();
+                console.log(response.data);
+            }).catch((erro)=>{
+                alert("Erro ao criar viagem")
+                console.log(erro);
+            })
+        }
     return (
         <div>
             <h1>Criar Viagem</h1>
-            <form onSubmit={onClickCreate}>
+            <form onSubmit={creatTrip}>
+            <label htmlFor='name'>Nome</label>
                 <input
-                name="nome"
-                value={form.password}
+                name="name"
+                value={form.name}
+                id="name"
                 onChange={onChange}
                 placeholder="Nome"
-                type="nome"
+                type="text"
                 pattern={"^.{5,}$"}
                 title={"O nome da viagem deve ter no mínimo 5 caracteres"}
                 required/>
+                
+                <label htmlFor='planet'>Destino</label>
                 <select
                 name={"planet"}
                 onChange={onChange}
                 placeholder={"Planeta"}
                 required>
+                 <option value={'Selecione uma viagem'}>Selecione uma viagem</option>
                  <option value={'marte'}>Marte</option>
                  <option value={'plutao'}>Plutao</option>
                  <option value={'lua'}>Lua</option>
                 </select>
+                <label htmlFor='date'>Data</label>
                 <input
                 placeholder={"Data"}
                 type={"date"}

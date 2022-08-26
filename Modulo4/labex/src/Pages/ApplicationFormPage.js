@@ -1,26 +1,42 @@
 import React, {useState} from "react";
 import {useNavigate} from "react-router-dom"
 import {useForm} from "../Hooks/useForm"
+import { useParams } from 'react-router-dom'
+import { useRequestData } from "../Hooks/useRequestData";
+import { BASE_URL } from "../constants/constants";
 import * as MyRoute from '../router/codinator'
+import axios from "axios";
+
+
 export const ApplicationFormPage =() => {
     const navigate=useNavigate()
-    const [trip, setTrip] =useState("")
-    const [form, onChange] =useForm({name: "", age: "", textapp: "", profession: "", country: "" })
-
-    const clearTrip = () => {
-        clear()
-       
-    }
-    const clickSend = (e) => {
+    //const params = useParams()
+  const [form, onChange, clear] = useForm({ name: '', age: 0, applicationText: '', profession: '', country: ''})
+   
+    const onSubmitApplication = (e) => {
         e.preventDefault()
-        sendApplication(form, trip, clearTrip)
+        console.log(form)
+       
+        axios.post(`${BASE_URL}mauricio-goncalves-lamarr/trips/${form.id}/apply`, form)
+            .then(() => {
+                alert("Aplicação enviada com sucesso!")
+                clear()
+            })
+            .catch(() => alert("Erro ao enviar a aplicação"))
     }
-    
+
+
 
     return (
         <div>
             <h1>ApplicationFormPage</h1>
-            <form onSubmit={clickSend}>
+            <form onSubmit={onSubmitApplication}>
+                <select
+
+                
+                >
+
+                </select>
                 <input
                 name="name"
                 value={form.name}
@@ -76,6 +92,9 @@ export const ApplicationFormPage =() => {
         <button type="submit">Enviar</button>
             </form>
             <button onClick={()=>{MyRoute.goToBack(navigate)}}>voltar</button>
+            <button type={"submit"}>Enviar</button>
         </div>
     )
 }
+
+

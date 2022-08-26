@@ -13,7 +13,7 @@ export const LoginPage =() => {
 
     const fazerLogin = (event) => {
         event.preventDefault()
-        axios.post(`${BASE_URL}login`,form)
+        axios.post(`${BASE_URL}mauricio-goncalves-lamarr/login`,form)
         .then(response => {
             localStorage.setItem("token", response.data.token)
             navigate("/admin/trips/list")
