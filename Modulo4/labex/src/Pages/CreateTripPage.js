@@ -5,6 +5,7 @@ import axios from "axios"
 import {useForm} from "../Hooks/useForm"
 import * as MyRoute from '../router/codinator'
 import { BASE_URL } from "../constants/constants";
+import {ApplicationScreenContainer, ApplicationForm} from './Style'
 export const CreateTripPage =() => {
     useProtectedPage();
     const navigate=useNavigate()
@@ -32,9 +33,9 @@ export const CreateTripPage =() => {
             })
         }
     return (
-        <div>
+        <ApplicationScreenContainer>
             <h1>Criar Viagem</h1>
-            <form onSubmit={creatTrip}>
+            <ApplicationForm onSubmit={creatTrip}>
             <label htmlFor='name'>Nome</label>
                 <input
                 name="name"
@@ -67,6 +68,7 @@ export const CreateTripPage =() => {
                 onChange={onChange}
                 required
                 />
+                <label htmlFor='description'>Descrição</label>
                 <input
                  placeholder={"Descrição"}
                  name={"description"}
@@ -76,6 +78,7 @@ export const CreateTripPage =() => {
                  pattern={"^.{30,}$"}
                  title={"O nome deve ter no mínimo 30 caracteres"}
              />
+             <label htmlFor='durationInDays'>Duração</label>
                 <input
                 placeholder={"Duração em dias"}
                 type={"number"}
@@ -84,9 +87,9 @@ export const CreateTripPage =() => {
                 onChange={onChange}
                 required
                 min={50}/>
-        <button type="submit">Eviar</button>
-            </form>
+        <button type="submit">Enviar</button>
             <button onClick={()=>{MyRoute.goToBack(navigate)}}>voltar</button>
-        </div>
+            </ApplicationForm>
+        </ApplicationScreenContainer>
     )
 }

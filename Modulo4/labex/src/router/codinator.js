@@ -17,6 +17,10 @@ export const goToLoginPage=(navigate)=>{
     navigate("/login")
 }
 
+export const goHomePage=(navigate)=>{
+    navigate("/")
+}
+
 export const goToBack=(navigate)=>{
     navigate(-1)
 }

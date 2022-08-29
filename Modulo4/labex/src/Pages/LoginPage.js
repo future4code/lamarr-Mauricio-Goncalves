@@ -4,6 +4,7 @@ import {useForm} from "../Hooks/useForm"
 import * as MyRoute from '../router/codinator'
 import { BASE_URL } from "../constants/constants";
 import axios from "axios";
+import { LoginCard, ButtonsContainer } from "./Style";
 
 export const LoginPage =() => {
     const navigate=useNavigate()
@@ -24,8 +25,8 @@ export const LoginPage =() => {
 
     return (
         <div>
-            <h1>LoginPage</h1>
-            <form onSubmit={fazerLogin }>
+            <LoginCard onSubmit={fazerLogin }>
+            <h1>Login Page</h1>
                 <input
                 name="email"
                 value={form.email}
@@ -38,9 +39,9 @@ export const LoginPage =() => {
                 onChange={onChange}
                 placeholder="Password"
                 type="password"/>
-            <button type="submit" >Entrar</button>
-            </form>
-            <button onClick={()=>{MyRoute.goToBack(navigate)}}>voltar</button>
+            <ButtonsContainer type="submit" >Entrar</ButtonsContainer>
+            <ButtonsContainer onClick={()=>{MyRoute.goHomePage(navigate)}}>Voltar</ButtonsContainer>
+            </LoginCard>
         </div>
     )
 }

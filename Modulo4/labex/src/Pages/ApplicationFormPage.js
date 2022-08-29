@@ -6,7 +6,7 @@ import { useRequestData } from "../Hooks/useRequestData";
 import { BASE_URL } from "../constants/constants";
 import * as MyRoute from '../router/codinator'
 import axios from "axios";
-
+import {ApplicationScreenContainer, ApplicationForm} from './Style'
 
 export const ApplicationFormPage =() => {
     const navigate=useNavigate()
@@ -28,15 +28,10 @@ export const ApplicationFormPage =() => {
 
 
     return (
-        <div>
+        <ApplicationScreenContainer>
             <h1>ApplicationFormPage</h1>
-            <form onSubmit={onSubmitApplication}>
-                <select
-
-                
-                >
-
-                </select>
+            <ApplicationForm onSubmit={onSubmitApplication}>
+            <label htmlFor='name'>Nome</label>
                 <input
                 name="name"
                 value={form.name}
@@ -47,6 +42,7 @@ export const ApplicationFormPage =() => {
                 title={"O nome deve ter no mínimo 3 caracteres"}
                 required
                 />
+                <label htmlFor='age'>Idade</label>
                 <input
                 name="age"
                 value={form.age}
@@ -55,6 +51,7 @@ export const ApplicationFormPage =() => {
                 type="number"
                 min={18}
                 required/>
+                <label htmlFor='textapp'>Texto de Candidatura</label>
                 <input
                 name="textapp"
                 value={form.textapp}
@@ -64,6 +61,7 @@ export const ApplicationFormPage =() => {
                 title={"O texto deve ter no mínimo 30 caracteres"}
                 required
                 />
+                <label htmlFor='profession'>profissao</label>
                 <input
                 name="profession"
                 value={form.profession}
@@ -72,7 +70,7 @@ export const ApplicationFormPage =() => {
                 pattern={"^.{10,}$"}
                 title={"A profissão deve ter no mínimo 10 caracteres"}
                 required/>
-                
+                <label htmlFor='country'>Pais</label>
                 <select
                 name="country"
                 value={form.country}
@@ -89,11 +87,11 @@ export const ApplicationFormPage =() => {
 
 
 
-        <button type="submit">Enviar</button>
-            </form>
-            <button onClick={()=>{MyRoute.goToBack(navigate)}}>voltar</button>
+        
             <button type={"submit"}>Enviar</button>
-        </div>
+            <button onClick={()=>{MyRoute.goToBack(navigate)}}>voltar</button>
+            </ApplicationForm>
+        </ApplicationScreenContainer>
     )
 }
 

@@ -4,6 +4,7 @@ import { useRequestData } from "../Hooks/useRequestData";
 import { useProtectedPage } from "../Hooks/useProtectedPage";
 import * as MyRoute from '../router/codinator'
 import axios from "axios";
+import {ApplicationScreenContainer, ContainerCard} from './Style'
 import { BASE_URL } from "../constants/constants";
 
 export function AdminHomePage () {
@@ -13,18 +14,18 @@ export function AdminHomePage () {
 
     const [dataAdminPage,isLoadingUser,erroUser] = useRequestData(`${BASE_URL}mauricio-goncalves-lamarr/trips`)
     const adminPage = dataAdminPage&&dataAdminPage.trips.map((item)=>{
-        return <div key={item.id}>{item.name}<button onClick={()=>{MyRoute.goToTripDetailsPage(navigate)}}>Aprovar</button><button>Reprovado</button></div>
+        return <ContainerCard key={item.id}>{item.name}</ContainerCard>
     })
 
     return(
-    <>
-    <h1>AdminHomePage</h1>
-    <p>Lista de viagem</p>
-
-    <button onClick={()=>{MyRoute.goToBack(navigate)}}>voltar</button>
+    <ApplicationScreenContainer>
             <button onClick={()=>{MyRoute.goToCreateTripPage(navigate)}}>Criar Viagem</button>
           <button onClick={()=>{MyRoute.goToLoginPage(navigate)}}>Logout</button>
     
+    
+    <h1>Painel Administrativo</h1>
+    <p>Lista de viagem</p>
+
     {isLoadingUser&&"...Carregando!"}
         <ul>
             {!isLoadingUser&&dataAdminPage&&adminPage}
@@ -32,6 +33,6 @@ export function AdminHomePage () {
         {!isLoadingUser&&!dataAdminPage&&erroUser}
     
     
-    </>
+    </ApplicationScreenContainer>
     )
 }
