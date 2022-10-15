@@ -13,5 +13,5 @@ function checaTriangulo(a:number, b:number, c:number){
     }
   }
 
-  console.log(checaTriangulo(10,20,10));
+  console.log(checaTriangulo(10,10,10));
   
