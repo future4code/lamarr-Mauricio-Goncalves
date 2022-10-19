@@ -28,7 +28,7 @@ const pokemon1: pokemon = {
 const pokemon2: pokemon = {
   name: "Bulbasaur",
   types: "Grass/Poison",
-  healthPoints: 31
+  healthPoints: 31,
 }
 
 const pokemon3: pokemon = {
