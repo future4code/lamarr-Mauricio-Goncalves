@@ -104,9 +104,18 @@ res.status(201).send(posts)
 
 //exe8
 
-app.get("/posts/user/:userId", (req:Request, res:Response) => {
-    if(!posts.length){
-        res.status(401).send("Não existe esse Post")
+app.get("/posts/:userId", (req:Request, res:Response) => {
+   const id = req.params.userId
+
+   const userPost = posts.filter((item)=>{
+    return item.id === id
+   })
+   const post = posts.filter((i)=>{
+    if(!id){
+        return i.body
+    }else if(!userPost){
+        return i.userId === id
     }
-res.status(201).send(posts)
+   })
+res.status(201).send(post)
 })
