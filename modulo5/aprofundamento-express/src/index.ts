@@ -14,7 +14,7 @@ app.use(cors())
 
 
 
-
+//exe1
 
 app.get("/ping", (req: Request, res: Response) => {          
     res.send("Pong!")
@@ -23,4 +23,15 @@ app.get("/ping", (req: Request, res: Response) => {
 
 app.listen(3003,()=>{
     console.log('Servidor executando na porta 3003')
+})
+
+
+//exe4
+
+app.get("/todos/completed/:isCompleted", (req:Request, res: Response)=>{
+
+
+
+    res.status(201).send("Pong!")
+
 })
