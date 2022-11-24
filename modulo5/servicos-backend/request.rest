@@ -1,0 +1,16 @@
+GET https://viacep.com.br/ws/01247090/json/
+Content-Type: application/json
+
+###
+
+### 
+
+POST https://aula-webservices.onrender.com/users/create
+Content-Type: application/json
+
+{
+  "name": "Mauricio",
+  "nickname": "Mau",
+  "email": "mauriciorg89@hotmail.com",
+  "zipcode": "01247040"
+}
