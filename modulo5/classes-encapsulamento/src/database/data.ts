@@ -20,33 +20,33 @@ export const users: User[] = [
     }
 ]
 
-export const products: Product[] = [
-    {
-        id: "201",
-        name: "Webcam",
-        price: 99.00
-    },
-    {
-        id: "202",
-        name: "Teclado Gamer",
-        price: 250.00
-    },
-    {
-        id: "203",
-        name: "Monitor",
-        price: 459.99
-    },
-    {
-        id: "204",
-        name: "Impressora",
-        price: 275.25
-    },
-    {
-        id: "205",
-        name: "Mouse Gamer",
-        price: 399.99
-    }
-]
+// export const products: Product[] = [
+//     {
+//         id: "201",
+//         name: "Webcam",
+//         price: 99.00
+//     },
+//     {
+//         id: "202",
+//         name: "Teclado Gamer",
+//         price: 250.00
+//     },
+//     {
+//         id: "203",
+//         name: "Monitor",
+//         price: 459.99
+//     },
+//     {
+//         id: "204",
+//         name: "Impressora",
+//         price: 275.25
+//     },
+//     {
+//         id: "205",
+//         name: "Mouse Gamer",
+//         price: 399.99
+//     }
+// ]
 
 export const purchases: PurchaseDB[] = [
     {
