@@ -28,7 +28,7 @@ export class invalidPassword extends CustomError {
 
 export class invalidUser extends CustomError {
     constructor(){
-        super(401, "Não tem usuários cadastrados!")
+        super(401, "Não existe usuários cadastrados!")
     }
 }
 
